@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MosoblgasSensorManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+622b91a53e56fcc710b2d3da317f62c26cb696b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("MosoblgasSensorManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MosoblgasSensorManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

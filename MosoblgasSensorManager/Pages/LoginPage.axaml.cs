@@ -35,8 +35,9 @@ public partial class LoginPage : UserControl
         var user = data.FirstOrDefault(x => x.Username == enteredLogin);
         if (user != null && user.Password == hashedPassword)
         {
-            MessageBoxManager.GetMessageBoxStandard("Успешная авторизация!", "Подтверждение").ShowAsync();
-            // Можно перейти на следующую страницу или выполнить другую логику
+            var mainWindow = (MainWindow)this.VisualRoot;
+            var tableUserPage = new TableUser();
+            mainWindow.ContentArea.Content = tableUserPage;
         }
         else
         {

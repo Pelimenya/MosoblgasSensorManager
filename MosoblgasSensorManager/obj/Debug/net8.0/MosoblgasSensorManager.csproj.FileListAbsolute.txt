@@ -182,3 +182,4 @@ F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\bin\Debug\net8.0\DialogH
 F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\bin\Debug\net8.0\Markdown.Avalonia.dll
 F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\bin\Debug\net8.0\MsBox.Avalonia.dll
 F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\bin\Debug\net8.0\System.Reactive.dll
+F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\obj\Debug\net8.0\MosoblgasSensorManager.sourcelink.json
