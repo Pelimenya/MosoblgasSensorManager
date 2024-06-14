@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MosoblgasSensorManager", "MosoblgasSensorManager\MosoblgasSensorManager.csproj", "{55E8A10B-5E48-4ABB-B7D0-BE49CAFE9E74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55E8A10B-5E48-4ABB-B7D0-BE49CAFE9E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55E8A10B-5E48-4ABB-B7D0-BE49CAFE9E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55E8A10B-5E48-4ABB-B7D0-BE49CAFE9E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55E8A10B-5E48-4ABB-B7D0-BE49CAFE9E74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
