@@ -1,0 +1,34 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MosoblgasSensorManager.Pages.Menu">
+    <SplitView IsPaneOpen="False" Name="SV" OpenPaneLength="250" DisplayMode="CompactInline" CompactPaneLength="48"
+               Background="White" PaneBackground="LightGray">
+        <SplitView.Pane>
+            <StackPanel Spacing="5" Margin="5">
+                <StackPanel Margin="0,0,0,20">
+                <Button Click="Button_OnClick">
+                    <PathIcon Data="{StaticResource LineHorizontalRegular3}"></PathIcon>
+                </Button>
+                </StackPanel>
+                <Button Click="NavigateToTableUser">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <PathIcon Data="{StaticResource CalendarPersonRegular}"></PathIcon>
+                        <TextBlock Width="170">Таблица "Пользователи"</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Click="NavigateToTableSensors">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <PathIcon Data="{StaticResource ToolboxRegular}"></PathIcon>
+                        <TextBlock Width="170">Таблица "Датчики"</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <TransitioningContentControl x:Name="TableUser"></TransitioningContentControl>
+        </SplitView.Content>
+    </SplitView>
+</UserControl>

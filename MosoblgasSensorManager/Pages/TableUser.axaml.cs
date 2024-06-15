@@ -1,7 +1,10 @@
-﻿using System.Linq;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using MosoblgasSensorManager.Models;
 
 namespace MosoblgasSensorManager.Pages;
 
@@ -12,12 +15,16 @@ public partial class TableUser : UserControl
         InitializeComponent();
         Data();
     }
-    // public ObservableCollection<User> People { get; set; }
+    public ObservableCollection<User> People { get; set; }
 
     public void Data()
     {
         var data = App.DB.Users.ToList();
-        //People = new ObservableCollection<User>(data);
-        dg.ItemsSource = data;
+        People = new ObservableCollection<User>(data);
+        dg.ItemsSource = People;
     }
+
+
+
+ 
 }

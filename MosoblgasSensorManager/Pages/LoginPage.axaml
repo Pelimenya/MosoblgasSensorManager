@@ -9,10 +9,10 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Margin="5, 0">Логин:</TextBlock>
-                <TextBox x:Name="login" Width="150" Height="40" VerticalContentAlignment="Center"></TextBox>
+                <TextBox x:Name="login" Width="150" Height="40" VerticalContentAlignment="Center">admin</TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Margin="5, 0" Text="Пароль:"></TextBlock>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Margin="5, 0" Text="Пароль:">123</TextBlock>
                 <TextBox PasswordChar="*" Width="150" Height="40" Margin="0,10" x:Name="password" VerticalContentAlignment="Center">
                 </TextBox>
             </StackPanel>

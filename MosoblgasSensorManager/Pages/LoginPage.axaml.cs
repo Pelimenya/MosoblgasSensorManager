@@ -36,8 +36,8 @@ public partial class LoginPage : UserControl
         if (user != null && user.Password == hashedPassword)
         {
             var mainWindow = (MainWindow)this.VisualRoot;
-            var tableUserPage = new TableUser();
-            mainWindow.ContentArea.Content = tableUserPage;
+            var menu = new Menu();
+            mainWindow.ContentArea.Content = menu;
         }
         else
         {

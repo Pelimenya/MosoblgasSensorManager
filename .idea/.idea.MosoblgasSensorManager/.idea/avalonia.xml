@@ -4,8 +4,12 @@
     <option name="projectPerEditor">
       <map>
         <entry key="MosoblgasSensorManager/App.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
+        <entry key="MosoblgasSensorManager/Assets/Icons.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
         <entry key="MosoblgasSensorManager/MainWindow.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
         <entry key="MosoblgasSensorManager/Pages/LoginPage.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
+        <entry key="MosoblgasSensorManager/Pages/Menu.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
+        <entry key="MosoblgasSensorManager/Pages/TableSensors.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
+        <entry key="MosoblgasSensorManager/Pages/TableUser.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
         <entry key="MosoblgasSensorManager/Styles/Styles.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
       </map>
     </option>

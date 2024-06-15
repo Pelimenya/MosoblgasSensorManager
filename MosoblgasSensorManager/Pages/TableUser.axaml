@@ -2,15 +2,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:MosoblgasSensorManager.Models"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="MosoblgasSensorManager.Pages.TableUser">
+             x:Class="MosoblgasSensorManager.Pages.TableUser"
+             x:DataType="models:User">
+    
     <Grid>
-        <DataGrid x:Name="dg" Margin="40"
-                  AutoGenerateColumns="True"
-                  IsReadOnly="True"
-                  GridLinesVisibility="All"
-                  BorderThickness="1"
-                  BorderBrush="Gray" 
-                  ColumnHeaderTheme="{StaticResource headerstyle}"/>
+        <Grid>
+            <StackPanel>
+                <DataGrid x:Name="dg" Margin="40"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="False"
+                          GridLinesVisibility="All"
+                          BorderThickness="1"
+                          BorderBrush="Gray">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding UserId}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
+                        <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+                        <DataGridTextColumn Header="Role" Binding="{Binding Role}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <!-- <Button Content="Добавить" Click="AddUser"/> -->
+                    <!-- <Button Content="Удалить" Click="DeleteUser" Margin="10,0,0,0"/> -->
+                    <!-- <Button Content="Сохранить изменения" Click="SaveChanges" Margin="10,0,0,0"/> -->
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

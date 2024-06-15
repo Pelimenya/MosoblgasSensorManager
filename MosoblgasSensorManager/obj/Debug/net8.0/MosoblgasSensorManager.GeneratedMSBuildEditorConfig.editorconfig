@@ -27,10 +27,19 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/Assets/Icons.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/Pages/LoginPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/Pages/Menu.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/Pages/TableSensors.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/Pages/TableUser.axaml]

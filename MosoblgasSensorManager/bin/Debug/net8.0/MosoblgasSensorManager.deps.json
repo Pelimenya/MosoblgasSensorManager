@@ -14,6 +14,7 @@
           "Avalonia.Diagnostics": "11.0.10",
           "Avalonia.Fonts.Inter": "11.0.10",
           "Avalonia.Themes.Fluent": "11.0.10",
+          "Avalonia.Win32": "11.0.10",
           "MessageBox.Avalonia": "3.1.5.1",
           "Microsoft.CodeAnalysis.CSharp": "4.5.0",
           "Microsoft.CodeAnalysis.CSharp.Scripting": "4.5.0",

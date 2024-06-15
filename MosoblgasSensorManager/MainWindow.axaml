@@ -6,7 +6,7 @@
         x:Class="MosoblgasSensorManager.MainWindow"
         Title="MosoblgasSensorManager"
         TransparencyLevelHint="AcrylicBlur"
-        Background="Transparent"
+        Background="White"
         WindowStartupLocation="CenterScreen"
         ExtendClientAreaToDecorationsHint="True">
         <Grid>
