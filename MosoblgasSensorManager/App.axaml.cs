@@ -1,26 +1,41 @@
+using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using MosoblgasSensorManager.Context;
 
-namespace MosoblgasSensorManager;
-
-public partial class App : Application
+namespace MosoblgasSensorManager
 {
-    public override void Initialize()
+    public partial class App : Application
     {
-        AvaloniaXamlLoader.Load(this);
-    }
+        public static IServiceProvider ServiceProvider { get; private set; }
 
-    public override void OnFrameworkInitializationCompleted()
-    {
-        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        public override void Initialize()
         {
-            desktop.MainWindow = new MainWindow();
+            AvaloniaXamlLoader.Load(this);
         }
 
-        base.OnFrameworkInitializationCompleted();
-    }
+        public override void OnFrameworkInitializationCompleted()
+        {
+            var serviceCollection = new ServiceCollection();
+            ConfigureServices(serviceCollection);
+            ServiceProvider = serviceCollection.BuildServiceProvider();
 
-    public static ContextDB DB = new();
+            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            {
+                desktop.MainWindow = ServiceProvider.GetService<MainWindow>();
+            }
+
+            base.OnFrameworkInitializationCompleted();
+        }
+
+        private void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<ContextDB>(options =>
+                options.UseNpgsql("host=localhost; port=5432; database=MosoblgasSensorManagerDB; username=Pelimenya; password=root"));
+            services.AddSingleton<MainWindow>();
+        }
+    }
 }
