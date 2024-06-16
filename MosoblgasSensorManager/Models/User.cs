@@ -12,4 +12,8 @@ public partial class User
     public string Password { get; set; } = null!;
 
     public string Role { get; set; } = null!;
+
+    public virtual ICollection<Report> Reports { get; set; } = new List<Report>();
+
+    public virtual Technician? Technician { get; set; }
 }

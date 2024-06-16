@@ -88,14 +88,15 @@ public partial class ContextDB : DbContext
 
             entity.ToTable("QRCode");
 
-            entity.Property(e => e.QrCodeId).HasColumnName("qr_code_id");
+            entity.Property(e => e.QrCodeId)
+                .ValueGeneratedOnAdd()
+                .HasColumnName("qr_code_id");
             entity.Property(e => e.QrCodeData).HasColumnName("qr_code_data");
-            entity.Property(e => e.SensorId).HasColumnName("sensor_id");
 
-            entity.HasOne(d => d.Sensor).WithMany(p => p.Qrcodes)
-                .HasForeignKey(d => d.SensorId)
+            entity.HasOne(d => d.QrCode).WithOne(p => p.Qrcode)
+                .HasForeignKey<Qrcode>(d => d.QrCodeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("QRCode_sensor_id_fkey");
+                .HasConstraintName("QRCode_qr_code_id_fkey");
         });
 
         modelBuilder.Entity<Reading>(entity =>
@@ -129,6 +130,12 @@ public partial class ContextDB : DbContext
             entity.Property(e => e.ReportType)
                 .HasMaxLength(50)
                 .HasColumnName("report_type");
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Reports)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("Report_user_id_fkey");
         });
 
         modelBuilder.Entity<Sensor>(entity =>
@@ -136,6 +143,8 @@ public partial class ContextDB : DbContext
             entity.HasKey(e => e.SensorId).HasName("Sensor_pkey");
 
             entity.ToTable("Sensor");
+
+            entity.HasIndex(e => e.SerialNumber, "idx_sensor_serial_number");
 
             entity.Property(e => e.SensorId).HasColumnName("sensor_id");
             entity.Property(e => e.InstallationDate).HasColumnName("installation_date");
@@ -161,7 +170,9 @@ public partial class ContextDB : DbContext
 
             entity.ToTable("Technician");
 
-            entity.Property(e => e.TechnicianId).HasColumnName("technician_id");
+            entity.Property(e => e.TechnicianId)
+                .ValueGeneratedOnAdd()
+                .HasColumnName("technician_id");
             entity.Property(e => e.ContactInfo)
                 .HasMaxLength(255)
                 .HasColumnName("contact_info");
@@ -171,6 +182,11 @@ public partial class ContextDB : DbContext
             entity.Property(e => e.Qualification)
                 .HasMaxLength(100)
                 .HasColumnName("qualification");
+
+            entity.HasOne(d => d.TechnicianNavigation).WithOne(p => p.Technician)
+                .HasForeignKey<Technician>(d => d.TechnicianId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("Technician_technician_id_fkey");
         });
 
         modelBuilder.Entity<User>(entity =>

@@ -21,7 +21,7 @@ public partial class Sensor
 
     public virtual ICollection<Maintenance> Maintenances { get; set; } = new List<Maintenance>();
 
-    public virtual ICollection<Qrcode> Qrcodes { get; set; } = new List<Qrcode>();
+    public virtual Qrcode? Qrcode { get; set; }
 
     public virtual ICollection<Reading> Readings { get; set; } = new List<Reading>();
 }

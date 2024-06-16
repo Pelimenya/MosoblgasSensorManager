@@ -12,4 +12,8 @@ public partial class Report
     public string ReportType { get; set; } = null!;
 
     public string Content { get; set; } = null!;
+
+    public int UserId { get; set; }
+
+    public virtual User User { get; set; } = null!;
 }

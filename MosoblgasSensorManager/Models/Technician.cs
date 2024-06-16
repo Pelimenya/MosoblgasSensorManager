@@ -14,4 +14,6 @@ public partial class Technician
     public string? Qualification { get; set; }
 
     public virtual ICollection<Maintenance> Maintenances { get; set; } = new List<Maintenance>();
+
+    public virtual User TechnicianNavigation { get; set; } = null!;
 }

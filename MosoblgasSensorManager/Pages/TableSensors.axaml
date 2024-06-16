@@ -2,16 +2,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:MosoblgasSensorManager.Models"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="MosoblgasSensorManager.Pages.TableSensors">
+             x:Class="MosoblgasSensorManager.Pages.TableSensors"
+             x:DataType="models:Sensor">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid Margin="10">
-            <DataGrid x:Name="dg" 
-                      AutoGenerateColumns="True"
+        <Grid Margin="10, 40">
+            <DataGrid x:Name="dg"
+                      AutoGenerateColumns="False"
                       IsReadOnly="False"
                       GridLinesVisibility="All"
                       BorderThickness="1"
@@ -20,6 +22,14 @@
                       HeadersVisibility="All"
                       CanUserSortColumns="True"
                       CanUserResizeColumns="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID Сенсора" Binding="{Binding SensorId}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Серийный Номер" Binding="{Binding SerialNumber}"/>
+                    <DataGridTextColumn Header="Дата Установки" Binding="{Binding InstallationDate}" />
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
+                    <DataGridTextColumn Header="Тип" Binding="{Binding Type}"/>
+                    <DataGridTextColumn Header="Адрес" Binding="{Binding Location.Address}"/>
+                </DataGrid.Columns>
             </DataGrid>
         </Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="1">
