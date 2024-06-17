@@ -2,45 +2,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="450"
              x:Class="MosoblgasSensorManager.Pages.Menu">
     <SplitView IsPaneOpen="False" Name="SV" OpenPaneLength="250" DisplayMode="CompactInline" CompactPaneLength="48"
                Background="White" PaneBackground="LightGray">
         <SplitView.Pane>
-            <StackPanel Spacing="5" Margin="5">
-                <StackPanel Margin="0,0,0,20">
-                <Button Click="Button_OnClick">
-                    <PathIcon Data="{StaticResource LineHorizontalRegular3}"></PathIcon>
-                </Button>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Spacing="5" Margin="5">
+                    <StackPanel Margin="0,0,0,20">
+                        <Button Click="Button_OnClick">
+                            <PathIcon Data="{StaticResource LineHorizontalRegular3}"></PathIcon>
+                        </Button>
+                    </StackPanel>
+                    <Button Click="NavigateToTableUser">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <PathIcon Data="{StaticResource CalendarPersonRegular}"></PathIcon>
+                            <TextBlock Width="170">Таблица "Пользователи"</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Click="NavigateToTableSensors">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <PathIcon Data="{StaticResource ToolboxRegular}"></PathIcon>
+                            <TextBlock Width="170">Таблица "Датчики"</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Click="NavigateToSettings">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <PathIcon Data="{StaticResource SettingsRegular}"></PathIcon>
+                            <TextBlock Width="170">Настройки</TextBlock>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
-                <Button Click="NavigateToTableUser">
-                    <StackPanel Orientation="Horizontal" Spacing="10">
-                        <PathIcon Data="{StaticResource CalendarPersonRegular}"></PathIcon>
-                        <TextBlock Width="170">Таблица "Пользователи"</TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Click="NavigateToTableSensors">
-                    <StackPanel Orientation="Horizontal" Spacing="10">
-                        <PathIcon Data="{StaticResource ToolboxRegular}"></PathIcon>
-                        <TextBlock Width="170">Таблица "Датчики"</TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Click="NavigateToTableSensors">
-                    <StackPanel Orientation="Horizontal" Spacing="10">
-                        <PathIcon Data="{StaticResource ToolboxRegular}"></PathIcon>
-                        <TextBlock Width="170">Настройки</TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Click="NavigateToTableSensors">
-                    <StackPanel Orientation="Horizontal" Spacing="10">
-                        <PathIcon Data="{StaticResource ToolboxRegular}"></PathIcon>
-                        <TextBlock Width="170">О программе</TextBlock>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
+                <StackPanel Grid.Row="1" Background="DodgerBlue" VerticalAlignment="Bottom">
+                    <Button Click="NavigateToAbout" Height="50" Width="250">
+                        <StackPanel Orientation="Horizontal" Spacing="20" VerticalAlignment="Center">
+                            <PathIcon Data="{StaticResource InfoRegular}"></PathIcon>
+                            <TextBlock Width="130" VerticalAlignment="Center">О программе</TextBlock>
+                            <Image Source="avares://MosoblgasSensorManager/Assets/Images/LogoShort.png" Width="55" Height="50" />
+                        </StackPanel>
+                        
+                    </Button>
+                </StackPanel>
+               
+            </Grid>
         </SplitView.Pane>
         <SplitView.Content>
-            <TransitioningContentControl x:Name="TableUser"></TransitioningContentControl>
+            <TransitioningContentControl x:Name="ContentFrame"></TransitioningContentControl>
         </SplitView.Content>
     </SplitView>
 </UserControl>

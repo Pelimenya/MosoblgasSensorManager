@@ -9,13 +9,17 @@ public partial class Sensor
 
     public string SerialNumber { get; set; } = null!;
 
-    public DateOnly InstallationDate { get; set; }
+    public DateOnly? InstallationDate { get; set; }
 
     public string Status { get; set; } = null!;
 
     public string Type { get; set; } = null!;
 
     public int? LocationId { get; set; }
+
+    public DateTime Lastverificationdate { get; set; }
+
+    public DateTime Nextverificationdate { get; set; }
 
     public virtual Location? Location { get; set; }
 

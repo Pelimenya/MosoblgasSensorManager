@@ -28,6 +28,7 @@
             </StackPanel>
         </StackPanel>
         <DataGrid x:Name="dg"
+                  LoadingRow="DataGrid_OnLoadingRow"
                   AutoGenerateColumns="False"
                   IsReadOnly="False"
                   GridLinesVisibility="All"
@@ -48,6 +49,8 @@
                 <DataGridTextColumn Header="Статус" Binding="{Binding Status}" />
                 <DataGridTextColumn Header="Тип" Binding="{Binding Type}" />
                 <DataGridTextColumn Header="Адрес" Binding="{Binding Location.Address}" />
+                <DataGridTextColumn Header="Дата последней поверки" Binding="{Binding Lastverificationdate}" />
+                <DataGridTextColumn Header="Дата будущей поверки" Binding="{Binding Nextverificationdate}" />
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="2">

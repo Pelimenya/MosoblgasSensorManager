@@ -148,7 +148,9 @@ public partial class ContextDB : DbContext
 
             entity.Property(e => e.SensorId).HasColumnName("sensor_id");
             entity.Property(e => e.InstallationDate).HasColumnName("installation_date");
+            entity.Property(e => e.Lastverificationdate).HasColumnName("lastverificationdate");
             entity.Property(e => e.LocationId).HasColumnName("location_id");
+            entity.Property(e => e.Nextverificationdate).HasColumnName("nextverificationdate");
             entity.Property(e => e.SerialNumber)
                 .HasMaxLength(50)
                 .HasColumnName("serial_number");

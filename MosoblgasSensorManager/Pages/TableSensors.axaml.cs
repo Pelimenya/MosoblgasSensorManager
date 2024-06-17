@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MosoblgasSensorManager.Context;
 using MosoblgasSensorManager.Models;
+using Avalonia.Media;
+using Location = MosoblgasSensorManager.Models.Location; // Не забудьте добавить это пространство имен
 
 namespace MosoblgasSensorManager.Pages
 {
@@ -34,13 +36,17 @@ namespace MosoblgasSensorManager.Pages
         {
             var newLocationAddress = "Новый адрес";
 
+            var existingLocation = _context.Locations.FirstOrDefault(l => l.Address == newLocationAddress);
+
             var newSensor = new Sensor
             {
                 SerialNumber = "Новый серийный номер",
                 InstallationDate = DateOnly.FromDateTime(DateTime.Now),
                 Status = "Новый статус",
                 Type = "Новый тип",
-                Location = new MosoblgasSensorManager.Models.Location { Address = newLocationAddress }
+                Location = existingLocation ?? new Location { Address = newLocationAddress },
+                Lastverificationdate = DateTime.UtcNow,
+                Nextverificationdate = DateTime.UtcNow.AddYears(1)
             };
 
             Sensors.Add(newSensor);
@@ -83,5 +89,31 @@ namespace MosoblgasSensorManager.Pages
             var filteredSensors = Sensors.Where(s => s.SerialNumber.ToLower().Contains(searchQuery)).ToList();
             dg.ItemsSource = filteredSensors;
         }
+
+        // Метод для подсветки строк в DataGrid
+        private void DataGrid_OnLoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            if (e.Row.DataContext is Sensor sensor)
+            {
+                if (sensor.Nextverificationdate != null)
+                {
+                    var daysUntilNextVerification = (sensor.Nextverificationdate - DateTime.Now).Days;
+
+                    if (daysUntilNextVerification <= 7 && daysUntilNextVerification > 0)
+                    {
+                        e.Row.Background = new SolidColorBrush(Colors.Yellow);
+                    }
+                    else if (daysUntilNextVerification <= 0)
+                    {
+                        e.Row.Background = new SolidColorBrush(Colors.Red);
+                    }
+                    else
+                    {
+                        e.Row.Background = new SolidColorBrush(Colors.White);
+                    }
+                }
+            }
+        }
+        
     }
 }

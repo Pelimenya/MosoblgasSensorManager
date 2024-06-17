@@ -20,11 +20,21 @@ public partial class Menu : UserControl
 
     private void NavigateToTableUser(object sender, RoutedEventArgs e)
     {
-        TableUser.Content = new TableUser();
+        ContentFrame.Content = new TableUser();
     }
 
     private void NavigateToTableSensors(object sender, RoutedEventArgs e)
     {
-        TableUser.Content = new TableSensors();
+        ContentFrame.Content = new TableSensors();
+    }
+
+    private void NavigateToSettings(object? sender, RoutedEventArgs e)
+    {
+        ContentFrame.Content = new SettingsPage();
+    }
+
+    private void NavigateToAbout(object? sender, RoutedEventArgs e)
+    {
+        ContentFrame.Content = new AboutPage();
     }
 }

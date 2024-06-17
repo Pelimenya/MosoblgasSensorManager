@@ -41,4 +41,15 @@
     <ItemGroup>
       <Folder Include="Assets\Images\" />
     </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\Images\LogoLong.jpeg" />
+      <AvaloniaResource Include="Assets\Images\LogoLong.jpeg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="Assets\Images\LogoShort.png" />
+      <AvaloniaResource Include="Assets\Images\LogoShort.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+    </ItemGroup>
 </Project>

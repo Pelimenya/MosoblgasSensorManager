@@ -6,8 +6,10 @@
         <entry key="MosoblgasSensorManager/App.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
         <entry key="MosoblgasSensorManager/Assets/Icons.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
         <entry key="MosoblgasSensorManager/MainWindow.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
+        <entry key="MosoblgasSensorManager/Pages/AboutPage.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
         <entry key="MosoblgasSensorManager/Pages/LoginPage.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
         <entry key="MosoblgasSensorManager/Pages/Menu.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
+        <entry key="MosoblgasSensorManager/Pages/SettingsPage.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
         <entry key="MosoblgasSensorManager/Pages/TableSensors.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
         <entry key="MosoblgasSensorManager/Pages/TableUser.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
         <entry key="MosoblgasSensorManager/Styles/Styles.axaml" value="MosoblgasSensorManager/MosoblgasSensorManager.csproj" />
