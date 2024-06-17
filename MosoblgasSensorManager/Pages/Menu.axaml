@@ -36,6 +36,12 @@
                             <TextBlock Width="170">Настройки</TextBlock>
                         </StackPanel>
                     </Button>
+                    <Button Click="NavigateToLoginPage" Margin="0,0,0,0">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <PathIcon Data="{StaticResource PowerRegular}"></PathIcon>
+                            <TextBlock Width="170">Выйти из аккаунта</TextBlock>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Background="DodgerBlue" VerticalAlignment="Bottom">
                     <Button Click="NavigateToAbout" Height="50" Width="250">
@@ -44,7 +50,6 @@
                             <TextBlock Width="130" VerticalAlignment="Center">О программе</TextBlock>
                             <Image Source="avares://MosoblgasSensorManager/Assets/Images/LogoShort.png" Width="55" Height="50" />
                         </StackPanel>
-                        
                     </Button>
                 </StackPanel>
                

@@ -10,6 +10,7 @@ public partial class Menu : UserControl
     public Menu()
     {
         InitializeComponent();
+        ContentFrame.Content = new AboutPage();
     }
 
 
@@ -36,5 +37,11 @@ public partial class Menu : UserControl
     private void NavigateToAbout(object? sender, RoutedEventArgs e)
     {
         ContentFrame.Content = new AboutPage();
+    }
+
+    private void NavigateToLoginPage(object? sender, RoutedEventArgs e)
+    {
+        var mainWindow = (MainWindow)this.VisualRoot;
+        mainWindow.ContentArea.Content = new LoginPage();
     }
 }

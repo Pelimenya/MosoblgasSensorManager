@@ -368,3 +368,4 @@ F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\obj\Debug\net8.0\Mosoblg
 F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\obj\Debug\net8.0\Mosoblga.83AABB04.Up2Date
 F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\obj\Debug\net8.0\MosoblgasSensorManager.genruntimeconfig.cache
 F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\obj\Debug\net8.0\ref\MosoblgasSensorManager.dll
+F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\bin\Debug\net8.0\Assets\Images\LogoShort.ico

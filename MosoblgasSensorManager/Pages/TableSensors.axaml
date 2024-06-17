@@ -49,14 +49,15 @@
                 <DataGridTextColumn Header="Статус" Binding="{Binding Status}" />
                 <DataGridTextColumn Header="Тип" Binding="{Binding Type}" />
                 <DataGridTextColumn Header="Адрес" Binding="{Binding Location.Address}" />
-                <DataGridTextColumn Header="Дата последней поверки" Binding="{Binding Lastverificationdate}" />
-                <DataGridTextColumn Header="Дата будущей поверки" Binding="{Binding Nextverificationdate}" />
+                <DataGridTextColumn Header="Дата последней поверки" Binding="{Binding Lastverificationdate, StringFormat=d}"  IsReadOnly="True"/>
+                <DataGridTextColumn Header="Дата будущей поверки" Binding="{Binding Nextverificationdate, StringFormat=d}" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="2">
             <Button Content="Добавить" Click="AddSensor" Margin="5" Padding="10" />
             <Button Content="Удалить" Click="DeleteSensor" Margin="5" Padding="10" />
             <Button Content="Сохранить изменения" Click="SaveChanges" Margin="5" Padding="10" />
+            <Button Content="Обновить" Click="Refresh" Margin="5" Padding="10" />
         </StackPanel>
     </Grid>
 </UserControl>

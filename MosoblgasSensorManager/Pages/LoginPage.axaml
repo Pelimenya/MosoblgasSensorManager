@@ -6,7 +6,11 @@
              x:Class="MosoblgasSensorManager.Pages.LoginPage">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20">
+            <StackPanel>
+            <Image Source="avares://MosoblgasSensorManager/../Assets/Images/LogoLong.jpeg" Width="200"></Image>
+            </StackPanel>
+            <StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Margin="5, 0">Логин:</TextBlock>
                 <TextBox x:Name="login" Width="150" Height="40" VerticalContentAlignment="Center">admin</TextBox>
@@ -17,6 +21,7 @@
                 </TextBox>
             </StackPanel>
             <Button Content="Войти" Click="Button_OnClick" HorizontalAlignment="Center"></Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

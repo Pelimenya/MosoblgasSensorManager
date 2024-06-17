@@ -6,6 +6,7 @@
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <ApplicationIcon>Assets\Images\LogoShort.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -39,10 +40,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Assets\Images\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Remove="Assets\Images\LogoLong.jpeg" />
       <AvaloniaResource Include="Assets\Images\LogoLong.jpeg">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -51,5 +48,10 @@
       <AvaloniaResource Include="Assets\Images\LogoShort.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </AvaloniaResource>
+      <None Remove="Assets\LogoShort.ico" />
+      <None Remove="Assets\Images\LogoShort.ico" />
+      <Content Include="Assets\Images\LogoShort.ico">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 </Project>

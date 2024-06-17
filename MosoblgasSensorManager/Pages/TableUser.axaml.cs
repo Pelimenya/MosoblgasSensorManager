@@ -62,5 +62,10 @@ namespace MosoblgasSensorManager.Pages
             var searhItem = tbSearch.Text.ToLower();
             dg.ItemsSource = People.Where(x => x.Username.ToLower().Contains(searhItem));
         }
+
+        private void Refresh(object? sender, RoutedEventArgs e)
+        {
+            Data();
+        }
     }
 }

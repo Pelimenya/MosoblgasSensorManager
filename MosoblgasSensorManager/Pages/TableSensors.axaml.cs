@@ -101,11 +101,11 @@ namespace MosoblgasSensorManager.Pages
 
                     if (daysUntilNextVerification <= 7 && daysUntilNextVerification > 0)
                     {
-                        e.Row.Background = new SolidColorBrush(Colors.Yellow);
+                        e.Row.Background = new SolidColorBrush(Colors.LightGoldenrodYellow);
                     }
                     else if (daysUntilNextVerification <= 0)
                     {
-                        e.Row.Background = new SolidColorBrush(Colors.Red);
+                        e.Row.Background = new SolidColorBrush(Colors.LightCoral);
                     }
                     else
                     {
@@ -114,6 +114,10 @@ namespace MosoblgasSensorManager.Pages
                 }
             }
         }
-        
+
+        private void Refresh(object? sender, RoutedEventArgs e)
+        {
+            LoadData();
+        }
     }
 }
