@@ -18,28 +18,21 @@ namespace MosoblgasSensorManager.Pages
         {
             InitializeComponent();
             _context = App.ServiceProvider.GetService<ContextDB>();
-            Data();
+            LoadData();
         }
 
-        // ObservableCollection для хранения данных сенсоров
         public ObservableCollection<Sensor> Sensors { get; set; }
 
-        // Метод для загрузки данных из базы данных и привязки к DataGrid
-        public void Data()
+        private void LoadData()
         {
-            var data = _context.Sensors
-                               .Include(s => s.Location) // Включение данных локации
-                               .ToList();
-            Sensors = new ObservableCollection<Sensor>(data); // Инициализация ObservableCollection
-            dg.ItemsSource = Sensors; // Установка ItemsSource для DataGrid
+            var data = _context.Sensors.Include(s => s.Location).ToList();
+            Sensors = new ObservableCollection<Sensor>(data);
+            dg.ItemsSource = Sensors;
         }
 
-        // Обработчик события для добавления сенсора
         private void AddSensor(object sender, RoutedEventArgs e)
         {
             var newLocationAddress = "Новый адрес";
-
-            // Проверяем, существует ли уже такой адрес в базе данных
             var existingLocation = _context.Locations.FirstOrDefault(l => l.Address == newLocationAddress);
 
             var newSensor = new Sensor
@@ -48,37 +41,56 @@ namespace MosoblgasSensorManager.Pages
                 InstallationDate = DateOnly.FromDateTime(DateTime.Now),
                 Status = "Новый статус",
                 Type = "Новый тип",
-                Location = existingLocation ?? new MosoblgasSensorManager.Models.Location { Address = newLocationAddress } // Используем существующий адрес или создаем новый
+                Location = existingLocation ?? new MosoblgasSensorManager.Models.Location { Address = newLocationAddress }
             };
 
-            Sensors.Add(newSensor); // Добавление нового сенсора в ObservableCollection
-            _context.Sensors.Add(newSensor); // Добавление нового сенсора в базу данных
+            Sensors.Add(newSensor);
+            _context.Sensors.Add(newSensor);
         }
 
-        // Обработчик события для удаления сенсора
         private void DeleteSensor(object sender, RoutedEventArgs e)
         {
             if (dg.SelectedItem is Sensor selectedSensor)
             {
-                Sensors.Remove(selectedSensor); // Удаление сенсора из ObservableCollection
-                _context.Sensors.Remove(selectedSensor); // Удаление сенсора из базы данных
+                Sensors.Remove(selectedSensor);
+                _context.Sensors.Remove(selectedSensor);
             }
         }
 
-        // Обработчик события для сохранения изменений
         private async void SaveChanges(object sender, RoutedEventArgs e)
         {
-            // Добавляем проверку новых локаций и их отслеживание контекстом
             foreach (var sensor in Sensors)
             {
                 if (sensor.Location != null && _context.Entry(sensor.Location).State == EntityState.Detached)
                 {
-                    _context.Locations.Add(sensor.Location); // Добавляем новую локацию в контекст
+                    _context.Locations.Add(sensor.Location);
                 }
             }
 
-            await _context.SaveChangesAsync(); // Сохранение изменений в базе данных асинхронно
-            Data(); // Обновление данных в ObservableCollection
+            await _context.SaveChangesAsync();
+            LoadData();
+        }
+
+        private void CbFilter_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
+        {
+            var selectedStatus = (cbFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
+
+            if (selectedStatus == "Все")
+            {
+                dg.ItemsSource = Sensors;
+            }
+            else
+            {
+                var filteredSensors = Sensors.Where(s => s.Status == selectedStatus).ToList();
+                dg.ItemsSource = filteredSensors;
+            }
+        }
+
+        private void TbSearch_OnTextChanged(object? sender, TextChangedEventArgs e)
+        {
+            var searchQuery = tbSearch.Text.ToLower();
+            var filteredSensors = Sensors.Where(s => s.SerialNumber.ToLower().Contains(searchQuery)).ToList();
+            dg.ItemsSource = filteredSensors;
         }
     }
 }

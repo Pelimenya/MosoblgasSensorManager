@@ -8,34 +8,52 @@
              x:DataType="models:Sensor">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid Margin="10, 40">
-            <DataGrid x:Name="dg"
-                      AutoGenerateColumns="False"
-                      IsReadOnly="False"
-                      GridLinesVisibility="All"
-                      BorderThickness="1"
-                      BorderBrush="Gray"
-                      RowBackground="White"
-                      HeadersVisibility="All"
-                      CanUserSortColumns="True"
-                      CanUserResizeColumns="True">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID Сенсора" Binding="{Binding SensorId}" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="Серийный Номер" Binding="{Binding SerialNumber}"/>
-                    <DataGridTextColumn Header="Дата Установки" Binding="{Binding InstallationDate}" />
-                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
-                    <DataGridTextColumn Header="Тип" Binding="{Binding Type}"/>
-                    <DataGridTextColumn Header="Адрес" Binding="{Binding Location.Address}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-        </Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="1">
-            <Button Content="Добавить" Click="AddSensor" Margin="5" Padding="10"/>
-            <Button Content="Удалить" Click="DeleteSensor" Margin="5" Padding="10"/>
-            <Button Content="Сохранить изменения" Click="SaveChanges" Margin="5" Padding="10"/>
+        <StackPanel Orientation="Horizontal" Spacing="50" Margin="10, 10, 10, 0" Grid.Row="0">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBlock Text="Поиск:" VerticalAlignment="Center"/>
+                <TextBox Width="200" x:Name="tbSearch" TextChanged="TbSearch_OnTextChanged"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBlock Text="Фильтрация по статусу:" VerticalAlignment="Center"/>
+                <ComboBox Width="200" x:Name="cbFilter" SelectionChanged="CbFilter_OnSelectionChanged">
+                    <ComboBoxItem Content="Все" />
+                    <ComboBoxItem Content="Активный" />
+                    <ComboBoxItem Content="Неактивный" />
+                    <ComboBoxItem Content="Неисправный" />
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid x:Name="dg"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="False"
+                  GridLinesVisibility="All"
+                  BorderThickness="1"
+                  BorderBrush="Gray"
+                  RowBackground="White"
+                  HeadersVisibility="All"
+                  CanUserSortColumns="True"
+                  CanUserResizeColumns="True"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  Margin="10, 10, 10, 10"
+                  Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Сенсора" Binding="{Binding SensorId}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Серийный Номер" Binding="{Binding SerialNumber}" />
+                <DataGridTextColumn Header="Дата Установки" Binding="{Binding InstallationDate}" />
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" />
+                <DataGridTextColumn Header="Тип" Binding="{Binding Type}" />
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Location.Address}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="2">
+            <Button Content="Добавить" Click="AddSensor" Margin="5" Padding="10" />
+            <Button Content="Удалить" Click="DeleteSensor" Margin="5" Padding="10" />
+            <Button Content="Сохранить изменения" Click="SaveChanges" Margin="5" Padding="10" />
         </StackPanel>
     </Grid>
 </UserControl>

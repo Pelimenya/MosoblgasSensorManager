@@ -20,27 +20,27 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.EnforceExtendedAnalyzerRules = 
 build_property.RootNamespace = MosoblgasSensorManager
-build_property.ProjectDir = F:\VSCode\MosoblgasSensorManager\MosoblgasSensorManager\
+build_property.ProjectDir = C:\Users\XIAOMI\Desktop\MosoblgasSensorManager\MosoblgasSensorManager\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/App.axaml]
+[C:/Users/XIAOMI/Desktop/MosoblgasSensorManager/MosoblgasSensorManager/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/Assets/Icons.axaml]
+[C:/Users/XIAOMI/Desktop/MosoblgasSensorManager/MosoblgasSensorManager/Assets/Icons.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/MainWindow.axaml]
+[C:/Users/XIAOMI/Desktop/MosoblgasSensorManager/MosoblgasSensorManager/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/Pages/LoginPage.axaml]
+[C:/Users/XIAOMI/Desktop/MosoblgasSensorManager/MosoblgasSensorManager/Pages/LoginPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/Pages/Menu.axaml]
+[C:/Users/XIAOMI/Desktop/MosoblgasSensorManager/MosoblgasSensorManager/Pages/Menu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/Pages/TableSensors.axaml]
+[C:/Users/XIAOMI/Desktop/MosoblgasSensorManager/MosoblgasSensorManager/Pages/TableSensors.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[F:/VSCode/MosoblgasSensorManager/MosoblgasSensorManager/Pages/TableUser.axaml]
+[C:/Users/XIAOMI/Desktop/MosoblgasSensorManager/MosoblgasSensorManager/Pages/TableUser.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
