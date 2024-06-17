@@ -56,5 +56,11 @@ namespace MosoblgasSensorManager.Pages
             // Обновление данных в ObservableCollection
             Data();
         }
+
+        private void TbSearch_OnTextChanged(object? sender, TextChangedEventArgs e)
+        {
+            var searhItem = tbSearch.Text.ToLower();
+            dg.ItemsSource = People.Where(x => x.Username.ToLower().Contains(searhItem));
+        }
     }
 }

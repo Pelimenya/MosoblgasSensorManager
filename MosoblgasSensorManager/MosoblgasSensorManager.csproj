@@ -37,4 +37,8 @@
     <ItemGroup>
       <AvaloniaXaml Remove="Styles\CustomMessageBox.axaml" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Assets\Images\" />
+    </ItemGroup>
 </Project>

@@ -8,11 +8,16 @@
              x:DataType="models:User">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid Margin="10">
-            <DataGrid x:Name="dg" 
+            <StackPanel Orientation="Horizontal" Spacing="10" Margin="10">
+                <TextBlock Text="Поиск:" VerticalAlignment="Center" />
+                <TextBox Width="200" x:Name="tbSearch" TextChanged="TbSearch_OnTextChanged"></TextBox>
+            </StackPanel>
+        <Grid  Grid.Row="1" Margin="10">
+            <DataGrid x:Name="dg"
                       AutoGenerateColumns="False"
                       IsReadOnly="False"
                       GridLinesVisibility="All"
@@ -23,17 +28,17 @@
                       CanUserSortColumns="True"
                       CanUserResizeColumns="True">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding UserId}" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="Имя пользователя" Binding="{Binding Username}"/>
-                    <DataGridTextColumn Header="Пароль" Binding="{Binding Password}"/>
-                    <DataGridTextColumn Header="Роль" Binding="{Binding Role}"/>
+                    <DataGridTextColumn Header="ID" Binding="{Binding UserId}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Имя пользователя" Binding="{Binding Username}" />
+                    <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" />
+                    <DataGridTextColumn Header="Роль" Binding="{Binding Role}" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="1">
-            <Button Content="Добавить" Click="AddUser" Margin="5" Padding="10"/>
-            <Button Content="Удалить" Click="DeleteUser" Margin="5" Padding="10"/>
-            <Button Content="Сохранить изменения" Click="SaveChanges" Margin="5" Padding="10"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="2">
+            <Button Content="Добавить" Click="AddUser" Margin="5" Padding="10" />
+            <Button Content="Удалить" Click="DeleteUser" Margin="5" Padding="10" />
+            <Button Content="Сохранить изменения" Click="SaveChanges" Margin="5" Padding="10" />
         </StackPanel>
     </Grid>
 </UserControl>

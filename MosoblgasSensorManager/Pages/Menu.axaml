@@ -25,6 +25,18 @@
                         <TextBlock Width="170">Таблица "Датчики"</TextBlock>
                     </StackPanel>
                 </Button>
+                <Button Click="NavigateToTableSensors">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <PathIcon Data="{StaticResource ToolboxRegular}"></PathIcon>
+                        <TextBlock Width="170">Настройки</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Click="NavigateToTableSensors">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <PathIcon Data="{StaticResource ToolboxRegular}"></PathIcon>
+                        <TextBlock Width="170">О программе</TextBlock>
+                    </StackPanel>
+                </Button>
             </StackPanel>
         </SplitView.Pane>
         <SplitView.Content>

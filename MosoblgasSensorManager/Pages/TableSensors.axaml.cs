@@ -33,7 +33,6 @@ namespace MosoblgasSensorManager.Pages
         private void AddSensor(object sender, RoutedEventArgs e)
         {
             var newLocationAddress = "Новый адрес";
-            var existingLocation = _context.Locations.FirstOrDefault(l => l.Address == newLocationAddress);
 
             var newSensor = new Sensor
             {
@@ -41,7 +40,7 @@ namespace MosoblgasSensorManager.Pages
                 InstallationDate = DateOnly.FromDateTime(DateTime.Now),
                 Status = "Новый статус",
                 Type = "Новый тип",
-                Location = existingLocation ?? new MosoblgasSensorManager.Models.Location { Address = newLocationAddress }
+                Location = new MosoblgasSensorManager.Models.Location { Address = newLocationAddress }
             };
 
             Sensors.Add(newSensor);
@@ -59,14 +58,6 @@ namespace MosoblgasSensorManager.Pages
 
         private async void SaveChanges(object sender, RoutedEventArgs e)
         {
-            foreach (var sensor in Sensors)
-            {
-                if (sensor.Location != null && _context.Entry(sensor.Location).State == EntityState.Detached)
-                {
-                    _context.Locations.Add(sensor.Location);
-                }
-            }
-
             await _context.SaveChangesAsync();
             LoadData();
         }
