@@ -4,5 +4,42 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="MosoblgasSensorManager.Pages.AboutPage">
-    Welcome to Avalonia!
+    <Grid Background="#F0F0F0" >
+        <!-- Title -->
+        <TextBlock FontSize="24" FontWeight="Bold" Foreground="#333" HorizontalAlignment="Center" Margin="0,40">
+            О программе
+        </TextBlock>
+
+        <!-- Content -->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="600" Spacing="20">
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="#555">
+                Программа "Mosoblgas Sensor Manager" предназначена для управления и мониторинга датчиков в системе Mosoblgas.
+                Она предоставляет возможность добавлять, редактировать и удалять датчики, а также следить за их состоянием и проводить необходимые проверки.
+            </TextBlock>
+
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="#555">
+                Основные функции программы включают:
+            </TextBlock>
+
+            <StackPanel Margin="20,0,0,0">
+                <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="#555">
+                    • Управление списком датчиков.
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="#555">
+                    • Мониторинг состояния датчиков.
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="#555">
+                    • Автоматическое уведомление о необходимости поверки датчиков.
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="#555">
+                    • Фильтрация и поиск по различным параметрам.
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Footer -->
+        <TextBlock FontSize="14" Foreground="#777" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+            Разработал Ляпин Константин Дмитриевич
+        </TextBlock>
+    </Grid>
 </UserControl>

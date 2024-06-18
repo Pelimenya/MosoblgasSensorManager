@@ -5,7 +5,7 @@
              mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="450"
              x:Class="MosoblgasSensorManager.Pages.Menu">
     <SplitView IsPaneOpen="False" Name="SV" OpenPaneLength="250" DisplayMode="CompactInline" CompactPaneLength="48"
-               Background="White" PaneBackground="LightGray">
+               PaneBackground="LightGray">
         <SplitView.Pane>
             <Grid>
                 <Grid.RowDefinitions>

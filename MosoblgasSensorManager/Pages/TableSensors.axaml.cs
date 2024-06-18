@@ -8,13 +8,13 @@ using Microsoft.Extensions.DependencyInjection;
 using MosoblgasSensorManager.Context;
 using MosoblgasSensorManager.Models;
 using Avalonia.Media;
-using Location = MosoblgasSensorManager.Models.Location; // Не забудьте добавить это пространство имен
+using Location = MosoblgasSensorManager.Models.Location; 
 
 namespace MosoblgasSensorManager.Pages
 {
     public partial class TableSensors : UserControl
     {
-        private readonly ContextDB _context;
+        private ContextDB _context;
 
         public TableSensors()
         {
@@ -117,7 +117,20 @@ namespace MosoblgasSensorManager.Pages
 
         private void Refresh(object? sender, RoutedEventArgs e)
         {
-            LoadData();
+            RefreshData();
+        }
+
+        private void RefreshData()
+        {
+            // Перезагрузка данных из базы данных
+            var refreshedData = _context.Sensors.Include(s => s.Location).AsNoTracking().ToList();
+            
+            Sensors.Clear();
+            foreach (var sensor in refreshedData)
+            {
+                Sensors.Add(sensor);
+            }
+            dg.ItemsSource = Sensors;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace MosoblgasSensorManager.Pages
 {
     public partial class TableUser : UserControl
     {
-        private readonly ContextDB _context;
+        private ContextDB _context;
         
         public TableUser()
         {
@@ -65,7 +65,9 @@ namespace MosoblgasSensorManager.Pages
 
         private void Refresh(object? sender, RoutedEventArgs e)
         {
+           
             Data();
+            dg.ItemsSource = People;
         }
     }
 }

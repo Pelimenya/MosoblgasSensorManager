@@ -4,5 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="MosoblgasSensorManager.Pages.SettingsPage">
-    Welcome to Avalonia!
+    <Grid >
+        <!-- Title -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+        <TextBlock FontSize="24" FontWeight="Bold"  HorizontalAlignment="Center" Margin="0,0,0,0">
+            Настройки
+        </TextBlock>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="600" Spacing="20">
+            <!-- Theme Settings -->
+            <TextBlock FontSize="18" FontWeight="Bold" >
+                Настройки темы
+            </TextBlock>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <RadioButton Content="Светлая тема" GroupName="Theme" Tag="Light" IsChecked="True" Checked="ThemeRadioButton_Checked"/>
+                <RadioButton Content="Тёмная тема" GroupName="Theme" Tag="Dark" Checked="ThemeRadioButton_Checked"/>
+            </StackPanel>
+            <TextBlock FontSize="18" FontWeight="Bold"  Margin="0,0,0,0">
+                Настройки языка
+            </TextBlock>
+            <ComboBox Name="LanguageComboBox" SelectionChanged="LanguageComboBox_SelectionChanged">
+                <ComboBoxItem Content="Русский" Tag="ru"/>
+                <ComboBoxItem Content="English" Tag="en"/>
+                <!-- Добавьте другие языки по необходимости -->
+            </ComboBox>
+            <TextBlock Text="*Находиться в стадии разработки (возможна нестабильная работа)"></TextBlock>
+        </StackPanel>
+        </Grid>
+    </Grid>
 </UserControl>
