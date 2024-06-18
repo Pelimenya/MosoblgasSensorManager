@@ -38,8 +38,11 @@
         </StackPanel>
 
         <!-- Footer -->
+        <StackPanel VerticalAlignment="Bottom">
         <TextBlock FontSize="14" Foreground="#777" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
-            Разработал Ляпин Константин Дмитриевич
+            Разработал: Ляпин Константин Дмитриевич 
         </TextBlock>
+        <TextBlock  FontSize="14" Foreground="#777" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">"Студент группы ИСП-8 ГБПОУ МО 'Ступинский техникум имени А. Т. Туманова'"</TextBlock>
+        </StackPanel>
     </Grid>
 </UserControl>

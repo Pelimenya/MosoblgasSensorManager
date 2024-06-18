@@ -33,7 +33,7 @@ namespace MosoblgasSensorManager.Pages
             byte[] hashedPasswordBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(enteredPassword));
             string hashedPassword = BitConverter.ToString(hashedPasswordBytes).Replace("-", "").ToLower();
 
-            // Создаем новый контекст для проверки логина и пароля
+           
             using (var scope = App.ServiceProvider.CreateScope())
             {
                 var _context = scope.ServiceProvider.GetRequiredService<ContextDB>();
@@ -53,17 +53,3 @@ namespace MosoblgasSensorManager.Pages
         }
     }
 }
-
-
-/* private async void MessageBox(string message)
- {
-     var dialog = new Window
-     {
-         Content = new TextBlock { Text = message, Margin = new Thickness(20) },
-         Width = 300,
-         Height = 150,
-         WindowStartupLocation = WindowStartupLocation.CenterOwner
-     };
-     await dialog.ShowDialog((Window)this.VisualRoot);
- }
- */
